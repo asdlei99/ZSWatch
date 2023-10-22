@@ -33,6 +33,7 @@ target_sources(app PRIVATE src/zsw_cpu_freq.c)
 
 target_sources(app PRIVATE src/drivers/zsw_display_control.c)
 target_sources(app PRIVATE src/drivers/zsw_vibration_motor.c)
+target_sources(app PRIVATE src/drivers/zsw_vib_sound.c)
 
 target_sources(app PRIVATE src/managers/zsw_app_manager.c)
 target_sources(app PRIVATE src/managers/zsw_notification_manager.c)

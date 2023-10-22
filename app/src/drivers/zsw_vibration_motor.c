@@ -37,8 +37,8 @@ static void pattern_timer_timeout(struct k_timer *timer_id);
 
 K_TIMER_DEFINE(vibration_timer, pattern_timer_timeout, NULL);
 
-static const struct pwm_dt_spec vib_motor = PWM_DT_SPEC_GET_OR(DT_ALIAS(vibrator_pwm), {});
-static const struct gpio_dt_spec enable_gpio = GPIO_DT_SPEC_GET_OR(DT_NODELABEL(vib_pwr), enable_gpios, {});
+static const struct pwm_dt_spec vib_motor = PWM_DT_SPEC_GET_OR(DT_ALIAS(vibrator_pwmm), {});
+static const struct gpio_dt_spec enable_gpio = GPIO_DT_SPEC_GET_OR(DT_NODELABEL(vib_pwrr), enable_gpios, {});
 
 static vib_motor_state_t press_pattern[] = {
     {.enabled = true, .percent = 90, .delay = 40},

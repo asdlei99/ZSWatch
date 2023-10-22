@@ -262,9 +262,20 @@ void run_wdt_work(struct k_work *item)
     task_wdt_feed(kernal_wdt_id);
     k_work_schedule(&wdt_work, K_MSEC(TASK_WDT_FEED_INTERVAL_MS));
 }
-
+#include <drivers/zsw_vib_sound.h>
 int main(void)
 {
+    app_buzzer_init();
+    while(true) {
+        play_beep_once();
+        k_msleep(1000);
+        play_funkytown_once();
+        k_msleep(1000);
+        play_mario_once();
+        k_msleep(1000);
+        play_golioth_once();
+        k_msleep(1000);
+    }
 #ifdef CONFIG_SPI_FLASH_LOADER
     if (bootmode_check(0xA)) {
         LOG_WRN("SPI Flash Loader Boot Mode");
