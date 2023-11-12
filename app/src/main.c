@@ -202,10 +202,10 @@ static void run_init_work(struct k_work *item)
 
     load_retention_ram();
     zsw_notification_manager_init();
-    enable_bluetoth();
-    zsw_imu_init();
-    zsw_magnetometer_init();
-    zsw_pressure_sensor_init();
+    //enable_bluetoth();
+    //zsw_imu_init();
+    //zsw_magnetometer_init();
+    //zsw_pressure_sensor_init();
     zsw_clock_init(retained.current_time_seconds);
     // Not to self, PWM consumes like 250uA...
     // Need to disable also when screen is off.
